@@ -11,9 +11,7 @@ import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-
 class MainActivity : AppCompatActivity() {
-    // deklarasikan webview
     lateinit var webView: WebView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         webView.webViewClient = WebViewClient()
         webView.setWebChromeClient(WebChromeClient())
         //variable for url
-        webView.loadUrl("https://c2a3-158-140-180-53.ap.ngrok.io/cvanugrah")
+        webView.loadUrl("https://58da-158-140-180-53.ap.ngrok.io/cvanugrah/")
 
         // web setting
         val webSettings = webView.settings
@@ -38,6 +36,12 @@ class MainActivity : AppCompatActivity() {
 
         // mengaktifkan tool seperti bootstrap
         webSettings.domStorageEnabled = true
+
+        // enable jquery
+        webSettings.javaScriptCanOpenWindowsAutomatically = true
+
+        //enable gsap.min.js
+        webSettings.allowUniversalAccessFromFileURLs = true
 
         //err_unknown_url_scheme when whatsapp:// and when user access drive.google.com open in browser
         //enable user for window.print()
@@ -62,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                     startActivity(intent)
                     return true
                     //when user open var url + /invoice/invoice.php open in browser
-                } else if (url.startsWith("https://c2a3-158-140-180-53.ap.ngrok.io/cvanugrah/invoice/invoice.php")) {
+                } else if (url.startsWith("https://58da-158-140-180-53.ap.ngrok.io/cvanugrah/invoice/Invoice.php")) {
                     val intent = Intent(Intent.ACTION_VIEW)
                     intent.data = Uri.parse(url)
                     startActivity(intent)
