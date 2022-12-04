@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 03, 2022 at 01:03 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.28
+-- Host: localhost
+-- Generation Time: Dec 03, 2022 at 08:40 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,25 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(4, 'admin', '21232f297a57a5a743894a0e4a801fc3');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `kalkulasi`
 --
 
@@ -53,7 +34,7 @@ CREATE TABLE `kalkulasi` (
   `luasbangunan` int(10) NOT NULL,
   `jumlantai` int(10) NOT NULL,
   `totalbiaya` int(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `kalkulasi`
@@ -110,64 +91,9 @@ INSERT INTO `kalkulasi` (`id`, `username`, `luastanah`, `luasbangunan`, `jumlant
 (48, 'Alpha parlindungan', 450, 150, 2, 1200000000),
 (49, 'Alpha parlindungan', 20, 20, 2, 180000000);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `portofolio`
---
-
-CREATE TABLE `portofolio` (
-  `id` int(11) NOT NULL,
-  `judul` varchar(100) NOT NULL,
-  `gdrive` varchar(100) NOT NULL,
-  `foto` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `portofolio`
---
-
-INSERT INTO `portofolio` (`id`, `judul`, `gdrive`, `foto`) VALUES
-(3, 'DESIGN RUMAH 2 LANTAI 9X18', 'https://drive.google.com/drive/folders/1i_8G38oTnkbQ-3leoTgTSHyIY1xU50O4', 'umah.jpg'),
-(4, 'DESIGN RUMAH 2 LT ROOFTOP 7X14', 'https://drive.google.com/drive/folders/1ogvDCeg4oyoA644X88wCB-SyzsOu8Doo', 'umah2.jpg'),
-(5, 'DESIGN RUMAH 3 LT', 'https://drive.google.com/drive/folders/1jEUq18UCISbyJqwfQr2FMFJAzGzti-jy', 'umah3.png'),
-(6, 'LAYOUT DESIGN RUMAH 10 X 20 3 lantai', 'https://drive.google.com/drive/folders/1u2UbNn0kUYmi-u7tXxU1Xhndfs6In-Dq', 'umah4.jpeg'),
-(7, 'Rumah 2 Lantai Bintaro', 'https://drive.google.com/drive/folders/1RvIql02I-2UHEiZft2TuhggDNKJhYUjV', 'umah5.png'),
-(8, 'Cottage Bintang Laut Resort', 'https://drive.google.com/drive/folders/1s3ypHYpFHA0NxIYPIebDlP3wCqGEyINy', 'cotagebintang.jpg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `no_telepon` varchar(20) NOT NULL,
-  `alamat` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `email`, `no_telepon`, `alamat`, `password`) VALUES
-(5, 'nikolai', 'inipalsu9@gmail.com', '081911248824', 'Jl. Kakaktua, Sawah Lama, Kec. Ciputat, Kota Tangerang Selatan, Banten 15413, Indonesia', 'db05ea034fd79d07e1602f7ca36d54b6'),
-(6, 'admin', 'admin@gmail.com', '1234567890', 'dsdsfsf', '25d55ad283aa400af464c76d713c07ad'),
-(7, 'Alpha parlindungan', 'ganiparlindunganbagasianasina@gmail.com', '085718332144', 'Perumnas 2', 'baa0bd649bd51683abc3f45dc610ec9b');
-
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `kalkulasi`
@@ -176,44 +102,14 @@ ALTER TABLE `kalkulasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `portofolio`
---
-ALTER TABLE `portofolio`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kalkulasi`
 --
 ALTER TABLE `kalkulasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
-
---
--- AUTO_INCREMENT for table `portofolio`
---
-ALTER TABLE `portofolio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

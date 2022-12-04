@@ -46,7 +46,7 @@ if(!isset($_SESSION['username'])){
         //get username from session
         $username = $_SESSION['username'];
         // create button to /invoice/invoice.php with totalbiaya, luasbangunan, jumlantai, no_telepon, alamat, username
-        echo "<a href='invoice/invoice.php?totalbiaya=$totalbiaya&luasbangunan=$luasbangunan&jumlantai=$jumlantai&no_telepon=$no_telepon&alamat=$alamat&username=$username' class='btn btn-secondary'>Cetak PDF</a>";
+        echo "<a href='invoice/Invoice.php?totalbiaya=$totalbiaya&luasbangunan=$luasbangunan&jumlantai=$jumlantai&no_telepon=$no_telepon&alamat=$alamat&username=$username' class='btn btn-secondary'>Cetak PDF</a>";
         ?>
     </div>
     <div class="deskripsi bd-container" style="margin-top: 24px;">
